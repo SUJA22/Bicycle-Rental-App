@@ -6,6 +6,8 @@ using System.Data;
 using CyloAPI.Model;
 namespace CyloAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ProductDetailsController : ControllerBase
     {
         private readonly IConfiguration _configuration;

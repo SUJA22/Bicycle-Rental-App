@@ -1,0 +1,3 @@
+https://docs.google.com/document/d/1ylPPqY5kJcRqsAR3abq66JB7gmmsdtYMccyl9FAeE4I/edit
+
+Sending emails: https://stackoverflow.com/questions/18326738/how-to-send-email-in-asp-net-c-sharp/18326814#18326814
