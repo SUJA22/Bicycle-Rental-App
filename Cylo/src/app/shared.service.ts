@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { observable } from 'rxjs';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import {User} from './user';
 
@@ -13,12 +12,16 @@ export class SharedService {
   getUserData() {
     return this.http.get<User[]>(`${environment.baseUrl}UserDetails`);
   }
-  postUserData(data:any){
-    this.http.post(`${environment.baseUrl}UserDetails`,data);
+  postUserData(formData:any){
+    return this.http.post(`${environment.baseUrl}UserDetails`, formData);
 
   }
   updateUserData(data:any){
-    this.http.put(`${environment.baseUrl}UserDetails`,data);
+    return this.http.put<void>(`${environment.baseUrl}UserDetails/${data.userId}`, data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    });
   }
   deleteUserData(data:any){
     this.http.delete(`${environment.baseUrl}UserDetails`,data);
@@ -27,8 +30,8 @@ export class SharedService {
   getAdminData() {
     return this.http.get<User[]>(`${environment.baseUrl}AdminDetails`);
   }
-  postAdminData(data:any){
-    this.http.post(`${environment.baseUrl}AdminDetails`,data);
+  postAdminData(formData:any){
+    return this.http.post(`${environment.baseUrl}AdminDetails`, formData);
 
   }
   updateAdminData(data:any){
@@ -42,20 +45,24 @@ export class SharedService {
     return this.http.get<User[]>(`${environment.baseUrl}ProductDetails`);
   }
   postProductData(data:any){
-    this.http.post(`${environment.baseUrl}ProductDetails`,data);
+    return this.http.post(`${environment.baseUrl}ProductDetails`,data);
 
   }
   updateProductData(data:any){
-    this.http.put(`${environment.baseUrl}ProductDetails`,data);
+    return this.http.put<void>(`${environment.baseUrl}ProductDetails/${data.id}`, data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    });
   }
   deleteProductData(data:any){
-    this.http.delete(`${environment.baseUrl}ProductDetails`,data);
+    return this.http.delete(`${environment.baseUrl}ProductDetails/${data}`);
   }
   getOrderData() {
     return this.http.get<User[]>(`${environment.baseUrl}OrderDetails`);
   }
-  postoOrderData(data:any){
-    this.http.post(`${environment.baseUrl}OrderDetails`,data);
+  postOrderData(formData:any){
+    return this.http.post(`${environment.baseUrl}OrderDetails`,formData);
 
   }
   updateOrderData(data:any){

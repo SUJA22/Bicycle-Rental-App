@@ -8,8 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Cylo';
-  btn:{
-    name: string;
-    link: string;
-  }[]=[{name:"Products",link:"/products"},{name:"Register",link:"/register"},{name:"Login",link:"/login"}]
 }

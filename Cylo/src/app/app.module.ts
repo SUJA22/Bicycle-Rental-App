@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
-import { UserNavbarComponent } from './user-navbar/user-navbar.component';
-import { AppCarouselComponent } from './app-carousel/app-carousel.component';
 import { UserLoginComponent } from './user-login/user-login.component';
-import { UserPortalComponent } from './user-portal/user-portal.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserPrevOrderComponent } from './user-prev-order/user-prev-order.component';
 import { UserConfirmOrderComponent } from './user-confirm-order/user-confirm-order.component';
@@ -19,22 +15,40 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { SharedService } from './shared.service';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ViewUsersComponent } from './view-users/view-users.component';
+import { ViewOrdersComponent } from './view-orders/view-orders.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter'
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    UserNavbarComponent,
-    AppCarouselComponent,
     UserLoginComponent,
-    UserPortalComponent,
     UserProfileComponent,
     UserPrevOrderComponent,
     UserConfirmOrderComponent,
     UserRegisterComponent,
     ProductsComponent,
     ProductCardComponent,
-  
+    AdminLoginComponent,
+    ForgotPasswordComponent,
+    ViewUsersComponent,
+    ViewOrdersComponent,
+    AdminProductsComponent,
+    AdminProfileComponent,
+    AdminNavbarComponent,
+    AdminRegisterComponent,
+    AddProductComponent,
+    EditProductComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +57,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

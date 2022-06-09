@@ -1,8 +1,9 @@
 <div class="container">
 <div class="box">
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
     <div class="form-group">
       <h2>Login</h2>
+      <h3>Don't have an account? <a [routerLink]="['/register']">Register</a></h3>
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
       <span *ngIf="e?.touched && e?.invalid" class="alert ">
@@ -22,7 +23,9 @@
     <div>
       <a [routerLink]="'/forgotPassword'">Forgot Password?</a>
     </div>
-    <a type="submit" class="btn btn-primary mt-2" href="http://localhost:4200/userProfile">Submit</a>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+  </div>
   </form>
 </div>
 </div>

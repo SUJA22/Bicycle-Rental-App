@@ -1,16 +1,17 @@
 <div class="container">
     <div class="box">
-    <form [formGroup]="registerUser" >
+    <form [formGroup]="registerUser" (ngSubmit)="postUser()">
         <div class="form-group">
             <h2>Registration</h2>
+            <h3>Already have an account? <a [routerLink]="['/']">Login</a></h3>
             <label for="Name">Name</label>
-            <input required type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" formControlName="name">
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" formControlName="name">
             <span *ngIf="registerUser.controls['name'].invalid && (registerUser.controls['name'].dirty || registerUser.controls['name'].touched)" class="alert">Name is required</span>
           <br>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+          <input  type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
           <span *ngIf="e?.touched && e?.invalid" class="alert ">
             <span *ngIf="e?.errors?.['required']">Email is required</span>
             <span *ngIf="e?.errors?.['pattern']">Provide valid email</span>
@@ -18,8 +19,8 @@
           <br>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Contact</label>
-            <input required type="email" class="form-control" id="contact" aria-describedby="emailHelp" placeholder="Enter Contact" formControlName="contact">
+            <label for="contact">Contact</label>
+            <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Contact" formControlName="contact">
             <span *ngIf="c?.touched && c?.invalid" class="alert">
             <span *ngIf="c?.errors?.['required']">Mobile number is required</span>
             <span *ngIf="c?.errors?.['pattern']">Provide 10 digit phone number</span>
@@ -28,14 +29,16 @@
   <br>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input required  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password"><br>
+          <input  type="password" class="form-control" placeholder="Password" formControlName="password"><br>
           <span *ngIf="p?.touched && p?.invalid" class="alert">
             <span *ngIf="p?.errors?.['required']">Password is required</span>
             <span *ngIf="p?.errors?.['pattern']">Password should be at between 8 - 15 characters long and should contain one number,one upper and lower case character and one special character</span>
             </span>
           <br>
+          </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </div>
-        <a type="submit" class="btn btn-primary mt-2">Submit</a>
       </form>
     </div>
     </div>

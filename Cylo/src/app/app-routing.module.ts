@@ -1,13 +1,25 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ProductsComponent } from './products/products.component';
 import { UserConfirmOrderComponent } from './user-confirm-order/user-confirm-order.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { ViewOrdersComponent } from './view-orders/view-orders.component';
+import { ViewUsersComponent } from './view-users/view-users.component';
 
 const routes: Routes = [
+  {
+    path:"",
+    component:UserLoginComponent
+  },
   {
     path:"login",
     component:UserLoginComponent
@@ -17,16 +29,55 @@ const routes: Routes = [
     component:UserRegisterComponent
   },
 {
-  path:"products",
+  path:"products/:id",
   component:ProductsComponent
 },
 {
-  path:"",
-  component:ProductsComponent
-},
-{
-path:"userProfile",
+path:"userProfile/:id",
 component:UserProfileComponent
+},
+{
+path:"confirmOrder/:id/:id2",
+component:UserConfirmOrderComponent
+},
+{
+  path:"admin",
+  component:AdminLoginComponent
+},
+{
+  path:"forgotPassword",
+  component:ForgotPasswordComponent
+},
+{
+  path:"adminRegister",
+  component:AdminRegisterComponent
+},
+{
+path:"adminProfile/:id",
+component:AdminProfileComponent
+},
+{
+  path:"confirmOrder/:id",
+  component:UserConfirmOrderComponent
+},{
+  path:"addProduct",
+  component:AddProductComponent
+},
+{
+  path:"adminProducts",
+  component:AdminProductsComponent
+},
+{
+  path:"updateProduct/:id",
+  component:EditProductComponent
+},
+{
+  path:"viewUser",
+  component:ViewUsersComponent
+},
+{
+path:"viewOrders",
+component:ViewOrdersComponent
 }
 ];
 
