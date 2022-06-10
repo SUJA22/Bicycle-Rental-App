@@ -2,14 +2,12 @@
 {
     public class OrderDetails
     {
-        public int OrderID { get; set; }
-        public int ProductID { get; set; }
-        public int UserId { get; set; }
-        public string Address { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
-        public double Cost { get; set; }
+        public int id { get; set; }
+        public int userId { get; set; }
+        public string address { get; set; }
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+    public string prodName { get; set; }
+        public double cost { get; set; }
     }
 }

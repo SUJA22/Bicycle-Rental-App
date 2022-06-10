@@ -2,11 +2,10 @@
 {
     public class ProductDetails
     {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public double PerHourCost { get; set; }
-        public int NumOrders { get; set; }
-        public string ImageLine { get;set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public double perHourCost { get; set; }
+        public string imagePath { get;set; }
     }
 }
